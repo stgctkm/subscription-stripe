@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'org.dddjava.jig-gradle-plugin' version '2020.8.2'
+}
+
+group = 'ccsr'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+sourceSets {
+	main {
+		resources.srcDirs = ["src/main/java", "src/main/resources"]
+	}
+}
+
+repositories {
+	jcenter()
+	mavenLocal()
+	maven {
+		url "https://dl.bintray.com/jignite/maven/"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	implementation "com.stripe:stripe-java:19.45.0"
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+bootJar {
+	layered {
+		includeLayerTools = true
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+[compileJava, processResources]*.shouldRunAfter(clean)
+jigReports.dependsOn(clean, classes)
