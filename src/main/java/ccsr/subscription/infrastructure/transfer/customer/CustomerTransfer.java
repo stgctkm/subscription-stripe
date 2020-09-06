@@ -6,9 +6,9 @@ import ccsr.subscription.domain.customer.Email;
 import com.stripe.exception.StripeException;
 import ccsr.subscription.domain.customer.Customer;
 import com.stripe.param.CustomerCreateParams;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 public class CustomerTransfer implements CustomerRepository {
     @Override
     public Customer createCustomer(Email email) {

@@ -9,4 +9,11 @@ public class Customer {
         this.email = email;
     }
 
+    public CustomerId customerId() {
+        return customerId;
+    }
+
+    public Email email() {
+        return email;
+    }
 }

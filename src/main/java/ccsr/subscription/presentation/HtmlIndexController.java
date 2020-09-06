@@ -7,7 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HtmlIndexController {
     @GetMapping("/customer")
     String customer() {
-        return "html/customer";
+        return "html/customer/index";
+    }
+
+    @GetMapping("/checkout")
+    String checkout() {
+        return "html/checkout/checkout";
+
     }
 
     @GetMapping("/subscription")

@@ -11,7 +11,8 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
     public Customer createCustomer(Email email) {
-        return customerRepository.createCustomer(email);
+        Customer customer = customerRepository.createCustomer(email);
+        return customer;
     }
 
     CustomerService(CustomerRepository customerRepository) {
