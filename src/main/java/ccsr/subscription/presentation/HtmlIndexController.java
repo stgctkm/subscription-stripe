@@ -11,8 +11,13 @@ public class HtmlIndexController {
     }
 
     @GetMapping("/subscription")
-    String index() {
+    String subscription() {
         return "html/subscription/index";
+    }
+
+    @GetMapping("/")
+    String index() {
+        return "html/index";
     }
 
 }
