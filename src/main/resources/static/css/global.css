@@ -354,7 +354,7 @@ pre {
 
 /* Pasha styles – Brand-overrides, can split these out */
 :root {
-  --accent-color: #ed5f74;
+  --accent-color: #46bf38;
   --headline-color: var(--accent-color);
   --logo-image: url("/images/ccsr.png");
 }
