@@ -10,6 +10,12 @@ public class HtmlIndexController {
         return "html/customer/index";
     }
 
+
+    @GetMapping("/payment-method")
+    String paymentMethod() {
+        return "html/payment-method/paymentMethod";
+    }
+
     @GetMapping("/checkout")
     String checkout() {
         return "html/checkout/checkout";
