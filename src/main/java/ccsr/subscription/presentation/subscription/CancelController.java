@@ -8,6 +8,6 @@ class CancelController {
 
     @GetMapping("/subscription/canceled.html")
     String success() {
-        return "/html/subscription/canceled";
+        return "/html/subscription/one-time/canceled";
     }
 }

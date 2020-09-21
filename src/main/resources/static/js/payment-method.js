@@ -41,7 +41,7 @@ const stripeElements = function(publicKey, setupIntent) {
   button.addEventListener("click", function(event) {
     event.preventDefault();
     changeLoadingState(true);
-    const email = document.getElementById("email").value;
+    // const email = document.getElementById("email").value;
 
     stripe
       .confirmCardSetup(setupIntent.clientSecret, {
@@ -91,7 +91,6 @@ const getPublicKey = function() {
     })
     .then(function(response) {
       getSetupIntent(response.publicKey);
-      // getSetupIntent(response);
     });
 };
 

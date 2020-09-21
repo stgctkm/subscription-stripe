@@ -8,6 +8,6 @@ class SuccessController {
 
     @GetMapping("/subscription/success.html")
     String success() {
-        return "/html/subscription/success";
+        return "/html/subscription/one-time/success";
     }
 }

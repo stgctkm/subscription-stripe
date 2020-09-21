@@ -3,6 +3,7 @@ package ccsr.subscription.application.service.customer;
 import ccsr.subscription.application.repository.customer.CustomerRepository;
 import ccsr.subscription.domain.customer.Customer;
 import ccsr.subscription.domain.customer.Email;
+import ccsr.subscription.domain.payment.PaymentMethodId;
 import ccsr.subscription.domain.student.Student;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,10 @@ public class CustomerService {
 
     public Customer retrieveCustomer(Student student) {
         return customerRepository.retrieveCustomer(student);
+    }
+
+    public void update(Customer customer, PaymentMethodId paymentMethodId) {
+        customerRepository.update(customer, paymentMethodId);
     }
 
     CustomerService(CustomerRepository customerRepository) {

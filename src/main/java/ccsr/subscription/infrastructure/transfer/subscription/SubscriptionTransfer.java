@@ -1,13 +1,18 @@
 package ccsr.subscription.infrastructure.transfer.subscription;
 
 import ccsr.subscription.application.repository.subscription.SubscriptionRepository;
+import ccsr.subscription.domain.customer.Customer;
 import ccsr.subscription.domain.subscription.SessionId;
 import ccsr.subscription.domain.subscription.SubscriptionPriceId;
 import com.stripe.exception.StripeException;
+import com.stripe.model.Subscription;
 import com.stripe.model.checkout.Session;
+import com.stripe.param.SubscriptionCreateParams;
 import com.stripe.param.checkout.SessionCreateParams;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
 
 @Component
 public class SubscriptionTransfer implements SubscriptionRepository {
@@ -39,6 +44,29 @@ public class SubscriptionTransfer implements SubscriptionRepository {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void subscribe(ccsr.subscription.domain.subscription.Subscription subscriptionRequest) {
+        // Create the subscription
+        SubscriptionCreateParams subCreateParams = SubscriptionCreateParams
+                .builder()
+                .addItem(
+                        SubscriptionCreateParams
+                                .Item.builder()
+                                .setPrice(subscriptionRequest.priceId().toString())
+                                .build()
+                )
+                .setCustomer(subscriptionRequest.customer().customerId().toString())
+                .addAllExpand(Arrays.asList("latest_invoice.payment_intent"))
+                .build();
+
+        try {
+            Subscription subscription = Subscription.create(subCreateParams);
+        } catch (StripeException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     SubscriptionTransfer(@Value("${domain}") String domainUrl) {

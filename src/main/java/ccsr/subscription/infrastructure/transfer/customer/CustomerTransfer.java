@@ -3,10 +3,12 @@ package ccsr.subscription.infrastructure.transfer.customer;
 import ccsr.subscription.application.repository.customer.CustomerRepository;
 import ccsr.subscription.domain.customer.CustomerId;
 import ccsr.subscription.domain.customer.Email;
+import ccsr.subscription.domain.payment.PaymentMethodId;
 import ccsr.subscription.domain.student.Student;
 import com.stripe.exception.StripeException;
 import ccsr.subscription.domain.customer.Customer;
 import com.stripe.param.CustomerCreateParams;
+import com.stripe.param.CustomerUpdateParams;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -40,6 +42,33 @@ public class CustomerTransfer implements CustomerRepository {
             return new Customer(
                     new CustomerId(customer.getId()),
                     new Email(customer.getEmail()));
+        } catch (StripeException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void update(Customer customer, PaymentMethodId paymentMethodId) {
+
+        com.stripe.model.Customer stripeCustomer = null;
+        try {
+            stripeCustomer = com.stripe.model.Customer.retrieve(customer.customerId().toString());
+        } catch (StripeException e) {
+            throw new RuntimeException(e);
+        }
+        CustomerUpdateParams customerUpdateParams =
+                CustomerUpdateParams
+                        .builder()
+                        .setInvoiceSettings(
+                                CustomerUpdateParams
+                                        .InvoiceSettings.builder()
+                                        .setDefaultPaymentMethod(paymentMethodId.toString())
+                                        .build()
+                        )
+                        .build();
+
+        try {
+            stripeCustomer.update(customerUpdateParams);
         } catch (StripeException e) {
             throw new RuntimeException(e);
         }
