@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.customer;
+package ccsr.subscription.presentation.controller.customer;
 
 import ccsr.subscription.application.service.customer.CustomerService;
 import ccsr.subscription.domain.customer.Customer;

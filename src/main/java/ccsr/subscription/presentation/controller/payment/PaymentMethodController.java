@@ -1,13 +1,10 @@
-package ccsr.subscription.presentation.payment;
+package ccsr.subscription.presentation.controller.payment;
 
 import ccsr.subscription.application.service.customer.CustomerService;
 import ccsr.subscription.application.service.payment.PaymentMethodService;
 import ccsr.subscription.domain.customer.Customer;
-import ccsr.subscription.domain.customer.CustomerId;
-import ccsr.subscription.domain.customer.Email;
 import ccsr.subscription.domain.payment.Preparation;
 import ccsr.subscription.domain.payment.card.CreditCards;
-import ccsr.subscription.domain.student.Student;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

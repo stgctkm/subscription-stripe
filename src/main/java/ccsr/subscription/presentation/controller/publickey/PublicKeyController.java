@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.publickey;
+package ccsr.subscription.presentation.controller.publickey;
 
 import ccsr.subscription.presentation.view.publickey.PublicKeyView;
 import org.springframework.beans.factory.annotation.Value;

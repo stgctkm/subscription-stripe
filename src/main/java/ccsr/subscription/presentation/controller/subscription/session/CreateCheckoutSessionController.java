@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.subscription.session;
 
 import ccsr.subscription.application.service.subscription.SubscriptionService;
 import ccsr.subscription.domain.subscription.SessionId;

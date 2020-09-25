@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.subscription;
 
 import ccsr.subscription.presentation.view.subscription.SettingsResponse;
 import org.springframework.beans.factory.annotation.Value;
