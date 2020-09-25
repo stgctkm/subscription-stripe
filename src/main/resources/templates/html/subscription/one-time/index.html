@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stripe Checkout Sample</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main" style="display: flex;">
+        <header class="sr-header">
+          <div class="sr-header__logo"></div>
+        </header>
+        <div class="sr-container">
+          <section class="container basic-photo">
+            <div>
+              <h1>稽古料</h1>
+              <h4>稽古料とcloud使用料</h4>
+              <div class="pasha-image">
+                <img src="/images/ccsr.png"/>
+              </div>
+            </div>
+            <button id="training-service-btn">¥60/日</button>
+          </section>
+        </div>
+        <div id="error-message"></div>
+      </div>
+    </div>
+  </body>
+</html>
