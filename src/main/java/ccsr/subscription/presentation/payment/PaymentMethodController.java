@@ -21,7 +21,7 @@ class PaymentMethodController {
 
     @PostMapping(value = "/create-setup-intent", produces = MediaType.APPLICATION_JSON_VALUE)
     Preparation createSetupIntent() {
-        Customer customer = customerService.retrieveCustomer(new Student(null));
+        Customer customer = customerService.retrieveCustomer();
 
         Preparation preparation = paymentMethodService.preparePaymentMethod(customer);
         return preparation;
@@ -29,7 +29,7 @@ class PaymentMethodController {
 
     @GetMapping(value = "/payment-methods", produces = MediaType.APPLICATION_JSON_VALUE)
     CreditCards list() {
-        Customer customer = customerService.retrieveCustomer(new Student(null));
+        Customer customer = customerService.retrieveCustomer();
         CreditCards cards = paymentMethodService.list(customer);
         return cards;
     }

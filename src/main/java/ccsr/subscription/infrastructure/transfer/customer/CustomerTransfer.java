@@ -4,7 +4,6 @@ import ccsr.subscription.application.repository.customer.CustomerRepository;
 import ccsr.subscription.domain.customer.CustomerId;
 import ccsr.subscription.domain.customer.Email;
 import ccsr.subscription.domain.payment.PaymentMethodId;
-import ccsr.subscription.domain.student.Student;
 import com.stripe.exception.StripeException;
 import ccsr.subscription.domain.customer.Customer;
 import com.stripe.param.CustomerCreateParams;
@@ -36,7 +35,7 @@ public class CustomerTransfer implements CustomerRepository {
     }
 
     @Override
-    public Customer retrieveCustomer(Student student) {
+    public Customer retrieveCustomer() {
         try {
             var customer = com.stripe.model.Customer.retrieve(customerId);
             return new Customer(

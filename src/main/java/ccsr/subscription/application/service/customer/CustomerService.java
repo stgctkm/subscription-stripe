@@ -17,8 +17,8 @@ public class CustomerService {
         return customer;
     }
 
-    public Customer retrieveCustomer(Student student) {
-        return customerRepository.retrieveCustomer(student);
+    public Customer retrieveCustomer() {
+        return customerRepository.retrieveCustomer();
     }
 
     public void update(Customer customer, PaymentMethodId paymentMethodId) {
