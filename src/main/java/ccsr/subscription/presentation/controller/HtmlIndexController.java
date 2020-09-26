@@ -16,11 +16,6 @@ public class HtmlIndexController {
         return "html/payment-method/paymentMethod";
     }
 
-    @GetMapping("/checkout")
-    String checkout() {
-        return "html/checkout/checkout";
-
-    }
 
     @GetMapping("/subscription")
     String subscription() {
