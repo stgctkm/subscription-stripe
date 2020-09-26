@@ -40,4 +40,16 @@ dashboard から取得する
 |  STRIPE_API_SECRET_KEY  |  xxx  |
 |  STRIPE_WEBHOOK_SECRET  |  xxx  |
 
+## screen shot
+![index](/doc/images/1_Index.png)
+
+![customer](/doc/images/2_register_customer.png)
+
+![Save a card](/doc/images/3_Saving_a_Card.png)
+
+![complete](/doc/images/4_Saving_a_Card_Complete.png)
+
+![Subscibe](/doc/images/5_Subscription.png)
+
+![Result](/doc/images/6_Result.png)
 
