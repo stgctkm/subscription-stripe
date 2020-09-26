@@ -1,7 +1,6 @@
 package ccsr.subscription.infrastructure.transfer.subscription;
 
 import ccsr.subscription.application.repository.subscription.SubscriptionRepository;
-import ccsr.subscription.domain.customer.Customer;
 import ccsr.subscription.domain.subscription.SessionId;
 import ccsr.subscription.domain.subscription.SubscriptionPriceId;
 import com.stripe.exception.StripeException;
