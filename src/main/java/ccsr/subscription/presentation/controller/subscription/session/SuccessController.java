@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.subscription.session;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,6 @@ class SuccessController {
 
     @GetMapping("/subscription/success.html")
     String success() {
-        return "/html/subscription/success";
+        return "/html/subscription/one-time/success";
     }
 }

@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.webhook;
 
 import com.stripe.exception.SignatureVerificationException;
 import com.stripe.model.Event;

@@ -1,9 +1,9 @@
-package ccsr.subscription.domain.customer;
+package ccsr.subscription.domain.payment;
 
-public class CustomerId {
+public class PaymentMethodId {
     String value;
 
-    public CustomerId(String value) {
+    public PaymentMethodId(String value) {
         this.value = value;
     }
 

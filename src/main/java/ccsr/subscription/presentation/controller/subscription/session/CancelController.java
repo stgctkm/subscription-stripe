@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.subscription.session;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,6 @@ class CancelController {
 
     @GetMapping("/subscription/canceled.html")
     String success() {
-        return "/html/subscription/canceled";
+        return "/html/subscription/one-time/canceled";
     }
 }

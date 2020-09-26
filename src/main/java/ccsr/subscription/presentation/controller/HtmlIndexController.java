@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation;
+package ccsr.subscription.presentation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +10,12 @@ public class HtmlIndexController {
         return "html/customer/index";
     }
 
-    @GetMapping("/checkout")
-    String checkout() {
-        return "html/checkout/checkout";
 
+    @GetMapping("/payment-method")
+    String paymentMethod() {
+        return "html/payment-method/paymentMethod";
     }
+
 
     @GetMapping("/subscription")
     String subscription() {
@@ -26,4 +27,8 @@ public class HtmlIndexController {
         return "html/index";
     }
 
+    @GetMapping("/subscribe/result")
+    String subscribeResult() {
+        return "html/subscription/result";
+    }
 }

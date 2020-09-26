@@ -1,4 +1,4 @@
-package ccsr.subscription.presentation.subscription;
+package ccsr.subscription.presentation.controller.subscription;
 
 import ccsr.subscription.presentation.view.subscription.SettingsResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,8 +22,8 @@ class SetUpController {
 
     SetUpController(@Value("${publishableKey}") String publishableKey,
                     @Value("${training.service.price.id}") String trainingServicePriceId,
-                    @Value("${basic.price.id}") String basicPriceId,
-                    @Value("${pro.price.id}") String proPriceId) {
+                    @Value("${basic.price.id:default_basic_price_id}") String basicPriceId,
+                    @Value("${pro.price.id:default_pro_price_id}") String proPriceId) {
         this.publishableKey = publishableKey;
         this.trainingServicePriceId = trainingServicePriceId;
         this.basicPriceId = basicPriceId;
