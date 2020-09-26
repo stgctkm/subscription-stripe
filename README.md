@@ -42,6 +42,7 @@ dashboard から取得する
 
 ## screen shot
 ![index](/doc/images/1_Index.png)
+
 - Customer 登録
 ![customer](/doc/images/2_register_customer.png)
 
@@ -54,6 +55,6 @@ dashboard から取得する
 - Subscribe
 ![Subscibe](/doc/images/5_Subscription.png)
 
-- Customer 登録
+- 結果
 ![Result](/doc/images/6_Result.png)
 
