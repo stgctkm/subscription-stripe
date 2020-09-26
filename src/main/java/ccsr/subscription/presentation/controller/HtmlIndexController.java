@@ -19,8 +19,7 @@ public class HtmlIndexController {
 
     @GetMapping("/subscription")
     String subscription() {
-        //Stripeが用意した決済ページへのリダイレクトでの課金
-        return "html/subscription/one-time/index";
+        return "html/subscription/index";
     }
 
     @GetMapping("/")
@@ -28,4 +27,8 @@ public class HtmlIndexController {
         return "html/index";
     }
 
+    @GetMapping("/subscribe/result")
+    String subscribeResult() {
+        return "html/subscription/result";
+    }
 }

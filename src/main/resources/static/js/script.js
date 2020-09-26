@@ -77,9 +77,11 @@ fetch("/setup")
         })
           .then(() => {
             console.log("success");
+            window.location.href = '/subscribe/result?status=succeeded';
           })
           .catch(() => {
             console.log("error");
+            window.location.href = '/subscribe/result?status=failed';
           })
         // createSubscription({
         //   customerId: customerId,

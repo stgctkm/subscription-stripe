@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <title>Subscribe結果</title>
+</head>
+<body>
+<div class="sr-root">
+  <div class="sr-main" style="display: flex;">
+    <header class="sr-header">
+      <div class="sr-header__logo"></div>
+    </header>
+    <div class="sr-container">
+      <section class="container basic-photo">
+        <h2>
+          <h1>結果</h1>
+          <h2 id="result"></h2>
+
+
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  document.getElementById("result").innerText = getParam('status');
+
+</script>
+</html>
