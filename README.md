@@ -42,14 +42,18 @@ dashboard から取得する
 
 ## screen shot
 ![index](/doc/images/1_Index.png)
-
+- Customer 登録
 ![customer](/doc/images/2_register_customer.png)
 
+- クレジットカード登録
 ![Save a card](/doc/images/3_Saving_a_Card.png)
 
+- クレジットカード登録結果
 ![complete](/doc/images/4_Saving_a_Card_Complete.png)
 
+- Subscribe
 ![Subscibe](/doc/images/5_Subscription.png)
 
+- Customer 登録
 ![Result](/doc/images/6_Result.png)
 
