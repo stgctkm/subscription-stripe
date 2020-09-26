@@ -41,6 +41,7 @@ dashboard から取得する
 |  STRIPE_WEBHOOK_SECRET  |  xxx  |
 
 ## screen shot
+- start
 ![index](/doc/images/1_Index.png)
 
 - Customer 登録
